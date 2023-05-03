@@ -4,10 +4,12 @@ import './navbar.css';
 
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import logo from '../../Assets/img/Logo.svg';
+
+import Settings from '../../Assets/img/Vectorsetting.svg';
 
 const Navbar = () => {
    const [isMenu, setIsMenu] = useState(false);
@@ -15,22 +17,27 @@ const Navbar = () => {
    const HEADER_NAVIGATION = [
       {
          name: 'Lobby',
-         path: '/',
+         path: '/routes/lobby',
          id: 1,
       },
       {
          name: 'Ranking',
-         path: '/',
+         path: '/routes/ranking',
          id: 2,
       },
       {
          name: 'Contacts',
-         path: '/',
+         path: '/routes/contacts',
          id: 3,
       },
       {
          name: 'Profile',
-         path: '/',
+         path: '/routes/profile',
+         id: 4,
+      },
+      {
+         name: 'Settings',
+         path: '/routes/settings',
          id: 4,
       },
    ];
@@ -38,15 +45,17 @@ const Navbar = () => {
    const hanldeVisibility = () => {
       setIsMenu(!isMenu);
    };
+   const navigate = useNavigate();
 
    return (
       <header className=' px-[100px] h-[70px] flex items-center bg-[#415BD4] max-sm:px-[20px] relative'>
          <nav className='flex flex-row  w-full h-full items-center transparent justify-between'>
             <div className='w-[15%] '>
                <img
+                  onClick={() => navigate('/routes/')}
                   src={logo}
                   alt='logo'
-                  className='max-w-[137px] mx-h-[47px]'
+                  className='max-w-[137px] mx-h-[47px] cursor-pointer'
                />
             </div>
             <MenuOutlined
@@ -81,7 +90,7 @@ const Navbar = () => {
                </Menu>
             )}
 
-            <div className='w-[35%] flex justify-between px-3  max-md:hidden'>
+            <div className='w-[55%]  flex justify-between px-3  max-md:hidden'>
                {HEADER_NAVIGATION.map(navItem => (
                   <Link
                      key={navItem.id}
@@ -95,13 +104,13 @@ const Navbar = () => {
                   </Link>
                ))}
             </div>
-            <div className='w-[20%]  ml-[50px] flex justify-between px-7 items-center max-md:hidden '>
-               <button className='w-[24px] h-[24px] rounded-full bg-white flex  items-center text-xs justify-center text-[#415BD4] font-extrabold  transition-colors hover:bg-gray-300'>
-                  En
-               </button>
-               <button className='w-[78px] h-[40px] bg-white text-[#415BD4] rounded-md flex items-center justify-center text-bold uppercase text-sm tracking-tight font-extrabold transition-colors hover:bg-gray-300 '>
-                  Sign In
-               </button>
+            <div className='w-[10%]   flex justify-end  items-center max-md:hidden'>
+               <img
+                  src={Settings}
+                  alt='settings'
+                  onClick={() => navigate('//')}
+                  className='cursor-pointer hover:rotate-90 transition-transform'
+               />
             </div>
          </nav>
       </header>
