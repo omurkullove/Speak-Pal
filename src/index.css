@@ -2,3 +2,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#preview_main {
+   background-color: red;
+   background: radial-gradient(
+      127.81% 252.75% at 90.17% 65.28%,
+      #ffffff 0%,
+      #4d65d3 42.88%,
+      #415bd4 52.71%,
+      #415bd4 71.36%,
+      #415bd4 87.98%,
+      #d5cfde 94.38%,
+      #dfd3f2 97.87%,
+      #a56cde 100%,
+      #415bd4 100%
+   );
+   min-height: 1024px;
+
+   position: relative;
+}
+
+.icon0 {
+   width: 60px;
+   height: 60px;
+   left: 670px;
+   top: 279px;
+}
+
+.icon1 {
+   width: 40px;
+   height: 40px;
+   left: 22px;
+   top: 448px;
+}
+.icon2 {
+   width: 15px;
+   height: 15px;
+   left: 722px;
+   top: 565px;
+}
+
+.icon3 {
+   width: 30px;
+   height: 30px;
+   left: 1402px;
+   top: 727px;
+}
+.icon4 {
+   width: 20px;
+   height: 20px;
+   left: 762px;
+   top: 83px;
+}
