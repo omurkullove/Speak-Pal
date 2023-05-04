@@ -1,0 +1,24 @@
+.signup__right {
+  margin-top: 70px;
+
+  & > :nth-child(2) {
+    max-width: 700px !important;
+    transform: translate(200px, -330px);
+  }
+}
+
+.signup__btn {
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .signup__right {
+    margin-top: 70px;
+    max-width: 40%;
+
+    & > :nth-child(2) {
+      flex-basis: 40%;
+      transform: translate(120px, -250px);
+    }
+  }
+}
