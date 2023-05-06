@@ -1,5 +1,7 @@
 /** @format */
 
+import './profile.css';
+
 import React from 'react';
 import calendar from '../../icons/calendar.png';
 import clock from '../../icons/clock.png';
@@ -10,7 +12,6 @@ import gender from '../../icons/gender.png';
 import hour from '../../icons/24.png';
 import location from '../../icons/location.png';
 import message from '../../icons/message.png';
-import style from './profile.css';
 
 export const Profile = () => {
    return (

@@ -2,43 +2,45 @@
 
 import './navbar.css';
 
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
 import { Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import logo from '../../Assets/img/Logo.svg';
-
 import Settings from '../../Assets/img/Vectorsetting.svg';
+import logo from '../../Assets/img/Logo.svg';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
    const [isMenu, setIsMenu] = useState(false);
 
+   const { t } = useTranslation();
+
    const HEADER_NAVIGATION = [
       {
-         name: 'Lobby',
+         name: t('navbar_item_lobby'),
          path: '/routes/lobby',
          id: 1,
       },
       {
-         name: 'Ranking',
+         name: t('navbar_item_ranking'),
          path: '/routes/ranking',
          id: 2,
       },
       {
-         name: 'Contacts',
+         name: t('navbar_item_contacts'),
          path: '/routes/contacts',
          id: 3,
       },
       {
-         name: 'Profile',
+         name: t('navbar_item_profile'),
          path: '/routes/profile',
          id: 4,
       },
       {
-         name: 'Settings',
+         name: t('navbar_item_settings'),
          path: '/routes/settings',
-         id: 4,
+         id: 5,
       },
    ];
 
@@ -52,10 +54,9 @@ const Navbar = () => {
          <nav className='flex flex-row  w-full h-full items-center transparent justify-between'>
             <div className='w-[15%] '>
                <img
-                  onClick={() => navigate('/routes/')}
                   src={logo}
                   alt='logo'
-                  className='max-w-[137px] mx-h-[47px] cursor-pointer'
+                  className='max-w-[137px] mx-h-[47px] '
                />
             </div>
             <MenuOutlined

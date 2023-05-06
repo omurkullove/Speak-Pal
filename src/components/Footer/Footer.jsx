@@ -1,14 +1,13 @@
 /** @format */
 
-import React from 'react';
-import Logo from '../../Assets/img/Logo.svg';
-import Telegramm from '../../Assets/img/Telegramm.svg';
-import Mail from '../../Assets/img/Vectormail.svg';
 import Facebook from '../../Assets/img/Vectorfacebook.svg';
+import { Link } from 'react-router-dom';
+import Logo from '../../Assets/img/Logo.svg';
+import Mail from '../../Assets/img/Vectormail.svg';
+import React from 'react';
+import Telegramm from '../../Assets/img/Telegramm.svg';
 import Twitter from '../../Assets/img/Vectortwitter.svg';
 import WhatsApp from '../../Assets/img/whatsapp_svgrepo.com.svg';
-
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
    const SOC_MEDIA = [
@@ -35,7 +34,7 @@ const Footer = () => {
    ];
 
    return (
-      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[162px] items-center w-full'>
+      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[162px] items-center w-full '>
          <div className='w-[10%] '>
             <img src={Logo} alt='logo' />
          </div>
