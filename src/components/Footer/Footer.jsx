@@ -34,7 +34,7 @@ const Footer = () => {
    ];
 
    return (
-      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[162px] items-center w-full '>
+      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[132px] items-center w-full '>
          <div className='w-[10%] '>
             <img src={Logo} alt='logo' />
          </div>
