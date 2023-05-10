@@ -34,11 +34,11 @@ const Footer = () => {
    ];
 
    return (
-      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[132px] items-center w-full '>
-         <div className='w-[10%] '>
+      <footer className='bg-[#415BD4]  flex px-[100px] max-sm:px-[20px] justify-between h-[80px] items-center w-full '>
+         <div className='w-[25%] '>
             <img src={Logo} alt='logo' />
          </div>
-         <div className='w-[50%]  flex justify-between px-[20px] items-center text-white uppercase underline text-[24px]'>
+         <div className='w-[30%]  flex justify-between px-[20px] items-center text-white uppercase underline text-[18px]'>
             <Link
                className=' transition-colors hover:text-[#dedede]'
                to={'/routes/'}

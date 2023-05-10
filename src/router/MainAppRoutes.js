@@ -9,6 +9,7 @@ import NotFound404 from '../pages/404NotFond/NotFound404';
 import { Profile } from '../pages/Profile/Profile';
 import Ranking from '../pages/Ranking/Ranking';
 import Room from '../pages/Room/Room';
+import Settings from '../pages/Settings/Settings';
 
 const MainAppRoutes = () => {
    const params = useLocation();
@@ -22,6 +23,7 @@ const MainAppRoutes = () => {
                <Route path='/contacts' element={<Contacs />} />
                <Route path='/room/:id' element={<Room />} />
                <Route path='*' element={<NotFound404 />} />
+               <Route path='/settings' element={<Settings />} />
             </Routes>
          </MainLayout>
       </>
