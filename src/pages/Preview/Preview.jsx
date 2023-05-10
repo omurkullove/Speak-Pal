@@ -9,6 +9,7 @@ import circleSVG from '../../Assets/img/circle.svg';
 import prev_1 from '../../Assets/img/prev_1.svg';
 import prev_2 from '../../Assets/img/prev_2.svg';
 import prev_3 from '../../Assets/img/prev_3.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Preview = () => {
    const CIRCLE_ICONS = [1, 2, 3, 4, 5];
@@ -19,6 +20,8 @@ const Preview = () => {
       const newLang = i18n.language === 'en' ? 'ru' : 'en';
       i18n.changeLanguage(newLang);
    };
+
+   const navigate = useNavigate();
 
    return (
       <main
@@ -50,7 +53,10 @@ const Preview = () => {
                   />
                   {i18n.language === 'en' ? 'Русский' : 'English'}
                </button>
-               <button className='text-[#415BD4] bg-white w-44 h-11 max-lg:w-36 rounded-[40px] shadow-buttonShadow font-black tracking-[0.045rem] hover:bg-[#dcdcdc]  border-2 border-[#415BD4] transition-colors'>
+               <button
+                  onClick={() => navigate('/login')}
+                  className='text-[#415BD4] bg-white w-44 h-11 max-lg:w-36 rounded-[40px] shadow-buttonShadow font-black tracking-[0.045rem] hover:bg-[#dcdcdc]  border-2 border-[#415BD4] transition-colors'
+               >
                   {t('preview_sign_in')}
                </button>
             </div>
@@ -63,7 +69,10 @@ const Preview = () => {
                <p className='text-[36px] leading-[36px] text-white mb-[132px] mt-[37px]'>
                   {t('preview_paragraph')}
                </p>
-               <button className='text-[#465FD4] shadow-buttonShadow rounded-[20px] px-[67px] py-[18px] font-bold bg-white hover:bg-[#dcdcdc] transition-colors '>
+               <button
+                  onClick={() => navigate('/register')}
+                  className='text-[#465FD4] shadow-buttonShadow rounded-[20px] px-[67px] py-[18px] font-bold bg-white hover:bg-[#dcdcdc] transition-colors '
+               >
                   {t('preview_button_start')}
                </button>
             </div>

@@ -54,7 +54,7 @@ const Lobby = () => {
    };
 
    return (
-      <div className='flex flex-col items-center mb-[30px] '>
+      <div className='flex flex-col items-center mb-[190px] '>
          <div className='flex flex-col text-center w-1/2 '>
             <h1 className='text-[40px] font-semibold leadding-[48.41px]'>
                Online partners: {rooms.length}

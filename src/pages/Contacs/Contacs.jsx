@@ -3,28 +3,54 @@
 import React from 'react';
 import { Tabs } from 'antd';
 import emoji from '../../Assets/img/emoji.svg';
+import useSelection from 'antd/es/table/hooks/useSelection';
+import { useSelector } from 'react-redux';
+import {
+   useGetAccountInfoQuery,
+   useGetAllUsersQuery,
+} from '../../Api/Auth.api';
+import { useNavigate } from 'react-router-dom';
 
 const Contacs = () => {
+   const { data: AccountInfo } = useGetAccountInfoQuery();
+
+   const { data: AllUsers } = useGetAllUsersQuery();
+
+   const navigate = useNavigate('');
+
    const CONTACT_ITEMS = [
       {
          key: '1',
          label: (
             <p className='font-semibold text-[26px] leading-[43.57px] '>
-               Calls
+               Users
             </p>
          ),
          children: (
-            <div className='w-full flex flex-col items-center mt-[113px] mb-[70px]'>
-               <img src={emoji} alt='emoji/' width={128} />
-               <p className='font-semibold text-[36px] leading-[43.57px] text-center mb-[17px] mt-[72px]'>
-                  History is empty
-               </p>
-               <p className='font-normal text-[28px] leading-[33.89px]'>
-                  You haven’t talked yet
-               </p>
-               <button className='px-[117px] py-[15px] bg-[#415BD4] text-white font-bold text-[30px] mt-[142px]'>
-                  Find a perfect partner
-               </button>
+            <div>
+               {AllUsers?.length ? (
+                  AllUsers.map(user => (
+                     <div>
+                        <h1>{user.username}</h1>
+                     </div>
+                  ))
+               ) : (
+                  <div className='w-full flex flex-col items-center mt-[113px] mb-[70px]'>
+                     <img src={emoji} alt='emoji/' width={128} />
+                     <p className='font-semibold text-[36px] leading-[43.57px] text-center mb-[17px] mt-[72px]'>
+                        Users lits is empty
+                     </p>
+                     <p className='font-normal text-[28px] leading-[33.89px]'>
+                        there are no registered users
+                     </p>
+                     <button
+                        className='px-[117px] py-[15px] bg-[#415BD4] text-white font-bold text-[30px] mt-[142px]'
+                        onClick={() => navigate('/routes/lobby')}
+                     >
+                        Find a perfect partner
+                     </button>
+                  </div>
+               )}
             </div>
          ),
       },
@@ -35,7 +61,15 @@ const Contacs = () => {
                Friend
             </p>
          ),
-         children: 'Friend',
+         children: (
+            <div>
+               {AccountInfo?.friends.length ? (
+                  AccountInfo?.friends.map(item => <h1>{item}</h1>)
+               ) : (
+                  <h1>friends list is empty</h1>
+               )}
+            </div>
+         ),
       },
       {
          key: '3',
@@ -44,7 +78,15 @@ const Contacs = () => {
                Blocked
             </p>
          ),
-         children: 'Blocked',
+         children: (
+            <div>
+               {AccountInfo?.blocked_users.length ? (
+                  AccountInfo?.blocked_users.map(item => <h1>{item}</h1>)
+               ) : (
+                  <h1>Blocked users list is empty</h1>
+               )}
+            </div>
+         ),
       },
    ];
 
