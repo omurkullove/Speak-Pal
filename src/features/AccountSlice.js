@@ -10,7 +10,6 @@ const initialState = {
 };
 
 const API = 'http://35.198.75.101/api';
-
 const AccountSlice = createSlice({
    name: 'AccountSlice',
    initialState,
