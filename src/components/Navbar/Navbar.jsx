@@ -90,7 +90,6 @@ const Navbar = () => {
                   ))}
                </Menu>
             )}
-
             <div className='w-[55%]  flex justify-between px-3  max-md:hidden'>
                {HEADER_NAVIGATION.map(navItem => (
                   <Link
@@ -104,14 +103,6 @@ const Navbar = () => {
                      {navItem.name}
                   </Link>
                ))}
-            </div>
-            <div className='w-[10%]   flex justify-end  items-center max-md:hidden'>
-               <img
-                  src={Settings}
-                  alt='settings'
-                  onClick={() => navigate('//')}
-                  className='cursor-pointer hover:rotate-90 transition-transform'
-               />
             </div>
          </nav>
       </header>
